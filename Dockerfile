@@ -15,8 +15,5 @@ RUN apt-get update && apt-get install -y \
 # Install yarn with npm
 RUN npm install -g yarn
 
-# Install gulp with yarn
-RUN yarn global add gulp
-
 # Install webpack with yarn
 RUN yarn global add webpack
