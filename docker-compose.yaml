@@ -1,0 +1,7 @@
+webpack_container:
+  container_name: webpack_container
+  build: .
+  volumes:
+    - .:/code
+  working_dir: /code
+  command: tail -f /dev/null # Keep container running. You can also use `sleep infinity`
