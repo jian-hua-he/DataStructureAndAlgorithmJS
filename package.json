@@ -18,6 +18,8 @@
   },
   "homepage": "https://github.com/jian-hua-ho/DataStructureAndAlgorithmJS#readme",
   "devDependencies": {
+    "babel-core": "^6.24.1",
+    "babel-loader": "^7.0.0",
     "path": "^0.12.7",
     "webpack": "^2.5.1"
   }
