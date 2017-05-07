@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/jian-hua-ho/DataStructureAndAlgorithmJS#readme",
   "devDependencies": {
+    "path": "^0.12.7",
     "webpack": "^2.5.1"
   }
 }
