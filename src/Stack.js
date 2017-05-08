@@ -1,30 +1,25 @@
-let Stack = (function () {
+let items = [];
 
-    let items = [];
-
-    class Stack {
-        push(element) {
-            items.push(element);
-        }
-
-        pop() {
-            return items.pop();
-        }
-
-        peek() {
-            return items[items.length - 1];
-        }
-
-        isEmpty() {
-            return items.length == 0;
-        }
-
-        size() {
-            return items.length;
-        }
+class Stack {
+    push(element) {
+        items.push(element);
     }
 
-    return Stack;
-})();
+    pop() {
+        return items.pop();
+    }
+
+    peek() {
+        return items[items.length - 1];
+    }
+
+    isEmpty() {
+        return items.length == 0;
+    }
+
+    size() {
+        return items.length;
+    }
+}
 
 export default Stack
