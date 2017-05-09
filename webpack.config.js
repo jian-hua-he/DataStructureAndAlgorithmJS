@@ -4,6 +4,7 @@ const path = require('path');
 module.exports = {
     entry: {
         Stack: './src/Stack.js',
+        Queue: './src/Queue.js',
         baseConverter: './src/baseConverter.js',
     },
     output: {
