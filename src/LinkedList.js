@@ -36,6 +36,7 @@ class LinkedList {
 
     }
 
+    // TODO: need fix
     removeAt(position) {
         let index = 0;
         let current = _head;
