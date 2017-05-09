@@ -37,7 +37,30 @@ class LinkedList {
     }
 
     removeAt(position) {
+        let index = 0;
+        let current = _head;
 
+        if (position < 0 && position >= _length) {
+            return null;
+        }
+
+        if (position === 0) {
+            _head = _head.next;
+            _length -= 1;
+            return _head.element;
+        }
+
+        while (index < position) {
+            let previous;
+
+            previous = current;
+            current = current.next;
+            index += 1;
+        }
+
+        _length -= 1;
+
+        return current.element;
     }
 
     remove(element) {
