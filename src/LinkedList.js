@@ -72,15 +72,23 @@ class LinkedList {
     }
 
     isEmpty() {
-
+        return _length === 0;
     }
 
     size() {
-
+        return _length;
     }
 
     toString() {
+        let current = _head;
+        let result = '';
 
+        while (current) {
+            result += current.element;
+            current = current.next;
+        }
+
+        return result;
     }
 
     print() {
