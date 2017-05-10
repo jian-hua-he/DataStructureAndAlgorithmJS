@@ -40,25 +40,26 @@ class LinkedList {
     removeAt(position) {
         let index = 0;
         let current = _head;
+        let previous;
 
         if (position < 0 && position >= _length) {
             return null;
         }
 
         if (position === 0) {
+            let removed = _head;
             _head = _head.next;
             _length -= 1;
-            return _head.element;
+            return removed.element;
         }
 
         while (index < position) {
-            let previous;
-
             previous = current;
             current = current.next;
             index += 1;
         }
 
+        previous.next = current.next;
         _length -= 1;
 
         return current.element;
