@@ -1,24 +1,24 @@
-let items = [];
+let _items = [];
 
 class Stack {
     push(element) {
-        items.push(element);
+        _items.push(element);
     }
 
     pop() {
-        return items.pop();
+        return _items.pop();
     }
 
     peek() {
-        return items[items.length - 1];
+        return _items[_items.length - 1];
     }
 
     isEmpty() {
-        return items.length == 0;
+        return _items.length == 0;
     }
 
     size() {
-        return items.length;
+        return _items.length;
     }
 }
 

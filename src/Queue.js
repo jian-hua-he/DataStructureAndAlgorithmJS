@@ -1,28 +1,28 @@
-let items = [];
+let _items = [];
 
 class Queue {
     enqueue(element) {
-        items.push(element);
+        _items.push(element);
     }
 
     dequeue() {
-        return items.shift();
+        return _items.shift();
     }
 
     front() {
-        return items[0];
+        return _items[0];
     }
 
     isEmpty() {
-        return items.length == 0;
+        return _items.length == 0;
     }
 
     size() {
-        return items.length;
+        return _items.length;
     }
 
     clear() {
-        items = [];
+        _items = [];
     }
 }
 
