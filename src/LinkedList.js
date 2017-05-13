@@ -97,7 +97,13 @@ class LinkedList {
     }
 
     remove(element) {
+        let index = this.indexOf(element);
+        if (index === -1) {
+            return index;
+        }
 
+        this.removeAt(index);
+        return index;
     }
 
     indexOf(element) {
