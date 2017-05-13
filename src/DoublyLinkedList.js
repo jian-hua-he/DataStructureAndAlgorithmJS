@@ -44,6 +44,18 @@ class DoublyLinkedList {
             return false;
         }
     }
+
+    toString() {
+        let result = '';
+        let current = _head;
+
+        while (current) {
+            result += current.element;
+            current = current.next;
+        }
+
+        return result;
+    }
 }
 
 class Node {
