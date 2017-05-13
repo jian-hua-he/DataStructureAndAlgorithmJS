@@ -6,6 +6,7 @@ module.exports = {
         Stack: './src/Stack.js',
         Queue: './src/Queue.js',
         LinkedList: './src/LinkedList.js',
+        DoublyLinkedList: './src/DoublyLinkedList.js',
         baseConverter: './src/baseConverter.js',
     },
     output: {
