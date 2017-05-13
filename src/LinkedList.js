@@ -97,7 +97,19 @@ class LinkedList {
     }
 
     indexOf(element) {
+        let current = _head;
+        let index = 0;
 
+        while (current) {
+            if (element === current.element) {
+                return index;
+            }
+
+            index += 1;
+            current = current.next;
+        }
+
+        return -1;
     }
 
     isEmpty() {
