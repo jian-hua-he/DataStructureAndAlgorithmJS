@@ -33,10 +33,34 @@ class LinkedList {
     }
 
     insert(position, element) {
+        let node = new Node(element);
+        let index = 0;
+        let current = _head;
+        let previous;
 
+        if (position < 0 && position >= _length) {
+            return false;
+        }
+
+        if (position === 0) {
+            node.next = current;
+            _head = node;
+        } else {
+            while (index < position) {
+                previous = current;
+                current = current.next;
+                index += 1;
+            }
+
+            node.next = current;
+            previous.next = node;
+        }
+
+        _length += 1;
+
+        return true;
     }
 
-    // TODO: need fix
     removeAt(position) {
         let index = 0;
         let current = _head;
