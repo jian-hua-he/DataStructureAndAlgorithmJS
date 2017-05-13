@@ -3,7 +3,47 @@ let _head = null;
 let _tail = null;
 
 class DoublyLinkedList {
+    insert(position, element) {
+        if (position >= 0 && position <= _length) {
+            let node = new Node(element);
+            let current = _head;
+            let previous;
 
+            if (position === 0) {
+                if (!head) {
+                    _head = node;
+                    _tail = node;
+                } else {
+                    node.next = current;
+                    current.prev = node;
+                    _head = node;
+                }
+            } else if (position === length) {
+                current = _tail;
+                current.next = node;
+                node.prev = current;
+                _tail = node;
+            } else {
+                let index = 0;
+                while (index < position) {
+                    previous = current;
+                    current = current.next;
+                    index += 1;
+                }
+                node.next = current;
+                previous.next = node;
+
+                current.prev = node;
+                node.prev = previous;
+            }
+
+            _length += 1;
+
+            return true;
+        } else {
+            return false;
+        }
+    }
 }
 
 class Node {
