@@ -10,7 +10,7 @@ class DoublyLinkedList {
             let previous;
 
             if (position === 0) {
-                if (!head) {
+                if (!_head) {
                     _head = node;
                     _tail = node;
                 } else {
@@ -18,7 +18,7 @@ class DoublyLinkedList {
                     current.prev = node;
                     _head = node;
                 }
-            } else if (position === length) {
+            } else if (position === _length) {
                 current = _tail;
                 current.next = node;
                 node.prev = current;
