@@ -43,18 +43,21 @@ class LinkedList {
         }
 
         if (position === 0) {
-            node.next = current;
+            node.next = _head;
             _head = node;
-        } else {
-            while (index < position) {
-                previous = current;
-                current = current.next;
-                index += 1;
-            }
+            _length += 1;
 
-            node.next = current;
-            previous.next = node;
+            return true;
         }
+
+        while (index < position) {
+            previous = current;
+            current = current.next;
+            index += 1;
+        }
+
+        node.next = current;
+        previous.next = node;
 
         _length += 1;
 
