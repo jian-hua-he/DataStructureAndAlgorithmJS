@@ -3,6 +3,15 @@ let _head = null;
 let _tail = null;
 
 class DoublyLinkedList {
+
+    getHead() {
+        return _head;
+    }
+
+    getTail() {
+        return _tail;
+    }
+
     insert(position, element) {
         let node = new Node(element);
         let current = _head;
@@ -82,6 +91,14 @@ class DoublyLinkedList {
         _length -= 1;
 
         return current.element;
+    }
+
+    isEmpty() {
+        return _length === 0;
+    }
+
+    size() {
+        return _length;
     }
 
     toString() {
