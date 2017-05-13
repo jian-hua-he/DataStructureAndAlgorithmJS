@@ -64,7 +64,7 @@ class DoublyLinkedList {
         } else if (position === _length - 1) {
             current = _tail;
             _tail = current.prev;
-            tail.next = null;
+            _tail.next = null;
         } else {
             let index = 0;
             let previous;
