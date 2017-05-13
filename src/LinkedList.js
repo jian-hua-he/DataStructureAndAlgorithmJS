@@ -19,6 +19,10 @@ class Node {
 }
 
 class LinkedList {
+    getHead() {
+        return _head;
+    }
+
     append(element) {
         let node = new Node(element);
 
@@ -130,10 +134,6 @@ class LinkedList {
         }
 
         return result;
-    }
-
-    print() {
-
     }
 }
 
