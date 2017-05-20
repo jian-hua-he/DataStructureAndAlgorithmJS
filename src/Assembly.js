@@ -11,7 +11,7 @@ class Assembly {
     }
 
     remove(value) {
-        if ( ! this.has(value)) {
+        if (this.has(value)) {
             delete _items[value];
             return true;
         }
