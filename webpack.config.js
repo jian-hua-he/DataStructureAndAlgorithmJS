@@ -3,6 +3,7 @@ const path = require('path');
 
 module.exports = {
     entry: {
+        Assembly: './src/Assembly.js',
         Stack: './src/Stack.js',
         Queue: './src/Queue.js',
         LinkedList: './src/LinkedList.js',
