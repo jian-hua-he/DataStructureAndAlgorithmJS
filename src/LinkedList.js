@@ -1,6 +1,3 @@
-let _length = 0;
-let _head = null;
-
 function _getLastNode(head) {
     let last = head;
 
@@ -19,37 +16,42 @@ class Node {
 }
 
 class LinkedList {
+    constructor() {
+        this._length = 0;
+        this._head = null;
+    }
+
     getHead() {
-        return _head;
+        return this._head;
     }
 
     append(element) {
         let node = new Node(element);
 
-        if (_head === null) {
-            _head = node;
+        if (this._head === null) {
+            this._head = node;
         } else {
-            let last = _getLastNode(_head);
+            let last = _getLastNode(this._head);
             last.next = node;
         }
 
-        _length += 1;
+        this._length += 1;
     }
 
     insert(position, element) {
         let node = new Node(element);
         let index = 0;
-        let current = _head;
+        let current = this._head;
         let previous;
 
-        if (position < 0 && position >= _length) {
+        if (position < 0 && position >= this._length) {
             return false;
         }
 
         if (position === 0) {
-            node.next = _head;
-            _head = node;
-            _length += 1;
+            node.next = this._head;
+            this._head = node;
+            this._length += 1;
 
             return true;
         }
@@ -63,24 +65,24 @@ class LinkedList {
         node.next = current;
         previous.next = node;
 
-        _length += 1;
+        this._length += 1;
 
         return true;
     }
 
     removeAt(position) {
         let index = 0;
-        let current = _head;
+        let current = this._head;
         let previous;
 
-        if (position < 0 && position >= _length) {
+        if (position < 0 && position >= this._length) {
             return null;
         }
 
         if (position === 0) {
-            let removed = _head;
-            _head = _head.next;
-            _length -= 1;
+            let removed = this._head;
+            this._head = this._head.next;
+            this._length -= 1;
             return removed.element;
         }
 
@@ -91,7 +93,7 @@ class LinkedList {
         }
 
         previous.next = current.next;
-        _length -= 1;
+        this._length -= 1;
 
         return current.element;
     }
@@ -107,7 +109,7 @@ class LinkedList {
     }
 
     indexOf(element) {
-        let current = _head;
+        let current = this._head;
         let index = 0;
 
         while (current) {
@@ -123,15 +125,15 @@ class LinkedList {
     }
 
     isEmpty() {
-        return _length === 0;
+        return this._length === 0;
     }
 
     size() {
-        return _length;
+        return this._length;
     }
 
     toString() {
-        let current = _head;
+        let current = this._head;
         let result = '';
 
         while (current) {
