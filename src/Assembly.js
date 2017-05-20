@@ -1,9 +1,11 @@
-let _items = {};
-
 class Assembly {
+    constructor() {
+        this._items = {};
+    }
+
     add(value) {
         if ( ! this.has(value)) {
-            _items[value] = value;
+            this._items[value] = value;
             return true;
         }
 
@@ -12,7 +14,7 @@ class Assembly {
 
     remove(value) {
         if (this.has(value)) {
-            delete _items[value];
+            delete this._items[value];
             return true;
         }
 
@@ -20,34 +22,47 @@ class Assembly {
     }
 
     has(value) {
-        return _items.hasOwnProperty(value);
+        return this._items.hasOwnProperty(value);
     }
 
     clear() {
-        _items = {};
+        this._items = {};
     }
 
     size() {
-        return Object.keys(_items).length;
+        return Object.keys(this._items).length;
     }
 
     values() {
-        return Object.keys(_items);
+        return Object.keys(this._items);
     }
 
     union(otherSet) {
-        let unionSet = new Assembly();
+        let result = new Assembly();
         let values = this.values();
-        for (var i = 0; i < values.length; i += 1) {
-            unionSet.add(values[i]);
+        for (let i = 0; i < values.length; i += 1) {
+            result.add(values[i]);
         }
 
         values = otherSet.values();
-        for (var i = 0; i < values.length; i += 1) {
-            unionSet.add(values[i]);
+        for (let i = 0; i < values.length; i += 1) {
+            result.add(values[i]);
         }
 
-        return unionSet;
+        return result;
+    }
+
+    intersection(otherSet) {
+        let result = new Assembly();
+        let values = this.values();
+
+        for (let i = 0; i < values.length; i += 1) {
+            if (otherSet.has(values[i])) {
+                result.add(values[i]);
+            }
+        }
+
+        return result;
     }
 }
 
