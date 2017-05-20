@@ -64,6 +64,19 @@ class Assembly {
 
         return result;
     }
+
+    difference(otherSet) {
+        let result = new Assembly();
+        let values = this.values();
+
+        for (let i = 0; i < values.length; i += 1) {
+            if (!otherSet.has(values[i])) {
+                result.add(values[i]);
+            }
+        }
+
+        return result;
+    }
 }
 
 export default Assembly
