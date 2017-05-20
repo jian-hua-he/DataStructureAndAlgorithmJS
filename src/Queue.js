@@ -1,28 +1,30 @@
-let _items = [];
-
 class Queue {
+    constructor() {
+        this._items = [];
+    }
+
     enqueue(element) {
-        _items.push(element);
+        this._items.push(element);
     }
 
     dequeue() {
-        return _items.shift();
+        return this._items.shift();
     }
 
     front() {
-        return _items[0];
+        return this._items[0];
     }
 
     isEmpty() {
-        return _items.length == 0;
+        return this._items.length == 0;
     }
 
     size() {
-        return _items.length;
+        return this._items.length;
     }
 
     clear() {
-        _items = [];
+        this._items = [];
     }
 }
 
