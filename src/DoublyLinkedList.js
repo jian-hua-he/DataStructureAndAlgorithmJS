@@ -23,7 +23,7 @@ class DoublyLinkedList {
         }
 
         if (position === 0) {
-            if (!_head) {
+            if (!this._head) {
                 this._head = node;
                 this._tail = node;
             } else {
