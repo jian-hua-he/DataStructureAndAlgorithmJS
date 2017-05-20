@@ -34,6 +34,21 @@ class Assembly {
     values() {
         return Object.keys(_items);
     }
+
+    union(otherSet) {
+        let unionSet = new Assembly();
+        let values = this.values();
+        for (var i = 0; i < values.length; i += 1) {
+            unionSet.add(values[i]);
+        }
+
+        values = otherSet.values();
+        for (var i = 0; i < values.length; i += 1) {
+            unionSet.add(values[i]);
+        }
+
+        return unionSet;
+    }
 }
 
 export default Assembly
