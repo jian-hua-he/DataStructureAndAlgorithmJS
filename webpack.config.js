@@ -4,6 +4,7 @@ const path = require('path');
 module.exports = {
     entry: {
         Assembly: './src/Assembly.js',
+        BinarySearchTree: './src/BinarySearchTree.js',
         Dictionary: './src/Dictionary.js',
         DoublyLinkedList: './src/DoublyLinkedList.js',
         HashTable: './src/HashTable.js',
