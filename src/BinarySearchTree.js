@@ -80,6 +80,50 @@ let _searchNode = (node, key) => {
     }
 }
 
+let _removeNode = (node, key) => {
+    if (node === null) {
+        return null;
+    }
+
+    if (key < node.key) {
+        node.left = _removeNode(node.left, key);
+        return node;
+    } else if (key > node.key) {
+        node.right = _removeNode(node.right, key);
+        return node;
+    } else {
+        if (node.left === null && node.pight === null) {
+            node = null;
+            return node;
+        }
+
+        if (node.left === null) {
+            node = node.right;
+            return node;
+        } else if (node.right === null) {
+            node = node.left;
+            return node;
+        }
+
+        let aux = _findMinNode(node.right);
+        node.key = aux.key;
+        node.right = removeNode(node.right, aux.key);
+        return node;
+    }
+}
+
+let _findMinNode = (node) => {
+    if (!node) {
+        return null;
+    }
+
+    while (node && node.left !== null) {
+        node = node.left;
+    }
+
+    return node;
+}
+
 class BinarySearchTree {
     constructor() {
         this._root = null;
@@ -127,7 +171,8 @@ class BinarySearchTree {
     }
 
     remove(key) {
-
+        let that = this;
+        that._root = _removeNode(that._root, key);
     }
 }
 
