@@ -86,3 +86,5 @@ class ValuePair {
         return `[${this.key} - ${this.value}]`;
     }
 }
+
+export default HashTable

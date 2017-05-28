@@ -32,7 +32,7 @@ class BinarySearchTree {
     }
 
     remove(key) {
-        
+
     }
 }
 
@@ -43,3 +43,5 @@ class Node {
         this._right = null;
     }
 }
+
+export default BinarySearchTree
