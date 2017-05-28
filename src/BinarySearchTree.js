@@ -34,6 +34,14 @@ let _preOrderTraverseNode = (node, callback) => {
     }
 }
 
+let _postOrderTraverseNode = (node, callback) => {
+    if (node !== null) {
+        _postOrderTraverseNode(node.left, callback);
+        _postOrderTraverseNode(node.right, callback);
+        callback(node.key);
+    }
+}
+
 class BinarySearchTree {
     constructor() {
         this._root = null;
@@ -64,8 +72,9 @@ class BinarySearchTree {
         _preOrderTraverseNode(that._root, callback);
     }
 
-    postOrderTraverse() {
-
+    postOrderTraverse(callback) {
+        let that = this;
+        _postOrderTraverseNode(that._root, callback);
     }
 
     min() {
