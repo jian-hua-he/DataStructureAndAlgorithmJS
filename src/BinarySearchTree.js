@@ -66,6 +66,20 @@ let _maxNode = (node) => {
     return node.key;
 }
 
+let _searchNode = (node, key) => {
+    if (node === null) {
+        return false;
+    }
+
+    if (key < node.key) {
+        return _searchNode(node.left, key);
+    } else if (key > node.key) {
+        return _searchNode(node.right, key);
+    } else {
+        return true;
+    }
+}
+
 class BinarySearchTree {
     constructor() {
         this._root = null;
@@ -83,7 +97,8 @@ class BinarySearchTree {
     }
 
     search(key) {
-
+        let that = this;
+        return _searchNode(that._root, key);
     }
 
     inOrderTraverse(callback) {
