@@ -42,6 +42,30 @@ let _postOrderTraverseNode = (node, callback) => {
     }
 }
 
+let _minNode = (node) => {
+    if (!node) {
+        return null;
+    }
+
+    while (node && node.left !== null) {
+        node = node.left;
+    }
+
+    return node.key;
+}
+
+let _maxNode = (node) => {
+    if (!node) {
+        return null;
+    }
+
+    while (node && node.right !== null) {
+        node = node.right;
+    }
+
+    return node.key;
+}
+
 class BinarySearchTree {
     constructor() {
         this._root = null;
@@ -78,11 +102,13 @@ class BinarySearchTree {
     }
 
     min() {
-
+        let that = this;
+        return _minNode(that._root);
     }
 
     max() {
-
+        let that = this;
+        return _maxNode(that._root);
     }
 
     remove(key) {
