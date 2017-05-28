@@ -14,6 +14,14 @@ let _insertNode = (node, newNode) => {
     }
 }
 
+let _inOrderTraverseNode = (node, callback) => {
+    if (node !== null) {
+        _inOrderTraverseNode(node.left, callback);
+        callback(node.key);
+        _inOrderTraverseNode(node.right, callback);
+    }
+}
+
 class BinarySearchTree {
     constructor() {
         this._root = null;
@@ -34,8 +42,9 @@ class BinarySearchTree {
 
     }
 
-    inOrderTraverse() {
-
+    inOrderTraverse(callback) {
+        let that = this;
+        _inOrderTraverseNode(that._root, callback);
     }
 
     preOrderTraverse() {
