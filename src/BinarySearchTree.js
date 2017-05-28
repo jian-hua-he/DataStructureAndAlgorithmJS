@@ -1,4 +1,8 @@
 let _insertNode = (node, newNode) => {
+    if (newNode.key === node.key) {
+        throw 'Node Already Exist';    
+    }
+
     if (newNode.key < node.key) {
         if (node.left === null) {
             node.left = newNode;
