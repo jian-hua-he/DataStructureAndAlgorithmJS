@@ -7,6 +7,7 @@ module.exports = {
         BinarySearchTree: './src/BinarySearchTree.js',
         Dictionary: './src/Dictionary.js',
         DoublyLinkedList: './src/DoublyLinkedList.js',
+        Graph: './src/Graph.js',
         HashTable: './src/HashTable.js',
         LinkedList: './src/LinkedList.js',
         Queue: './src/Queue.js',
